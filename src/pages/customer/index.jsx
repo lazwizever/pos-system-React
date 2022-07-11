@@ -24,13 +24,6 @@ class Customer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            top100Films: [
-                { label: 'The Shawshank Redemption', year: 1994 },
-                { label: 'The Godfather', year: 1972 },
-                { label: 'The Godfather: Part II', year: 1974 },
-                { label: 'The Dark Knight', year: 2008 },
-                { label: '12 Angry Men', year: 1957 },
-            ],
 
             formData:{
                 customerId :'',
@@ -72,16 +65,16 @@ class Customer extends Component {
                 <Grid style={{overflow: 'hidden'}}>
                  <Grid className={classes.navTabs}>
                         <Tabs  centered onChange={onchange}>
-                            <Tab label="Home"  style={{color:'white',top:'7px'}}/>
+                            <Tab label="Home"  href ="/" style={{color:'white',top:'7px'}}/>
 
-                            <Tab label="Customer"  style={{color:'white',top:'7px'}}/>
+                            <Tab label="Customer" href ="Customer"  style={{color:'white',top:'7px'}}/>
 
-                            <Tab label="Item" style={{color:'white',top:'7px'}}/>
+                            <Tab label="Item" href ="Item" style={{color:'white',top:'7px'}}/>
                         </Tabs>
                     </Grid>
 
 
-                <Typography variant="h4">
+                <Typography variant="h4" style={{paddingTop: '5px'}}>
                     Customer Manage
                 </Typography>
 
@@ -89,7 +82,7 @@ class Customer extends Component {
                     <Divider light/>
                 </Typography>
 
-                <Grid container spacing={3} style={{marginTop: '20px'}}>
+                <Grid container spacing={3} style={{paddingTop: '20px',left:0,right:0,top:0,bottom:0,margin:"auto"}}>
 
 
                     <Grid item lg={4} md={6} sm={6} xm={6} style={{width: '90%'}}>
@@ -137,26 +130,35 @@ class Customer extends Component {
                         <TextField id="outlined-basic" placeHolder="Contact No" label="Contact No" variant="outlined" size="small" style={{width: '80%'}}/>
                     </Grid>
 
+
                     <Grid item lg={12} md={12} sm={12} xm={12} style={{display: 'flex'}} justifyContent="flex-end">
-                        <Button variant="contained" color="info"
-                                onClick={() => {
-                                    this.saveCustomer()
-                                }}
-                        >Success</Button>
+                        <Grid style={{marginRight: '6vw'}}>
+                            <Button variant="contained" color="success" style={{margin: '1vh'}}
+                                    onClick={() => {
+                                        this.saveCustomer()
+                                    }}
+                            >Save</Button>
+
+                            <Button variant="contained" color="warning" style={{margin: '1vh'}}>Update</Button>
+                            <Button variant="contained" color="error" style={{margin: '1vh'}}>Delete</Button>
+                            <Button variant="contained" color="info" style={{margin: '1vh'}}>Cancel</Button>
+                        </Grid>
+
                     </Grid>
 
 
-                    <Grid style={{marginTop:'60px',marginRight:'150px',marginLeft:'30px',width:'100%'}}>
+
+                    <Grid style={{paddingTop:'5vh',width:'95%',left:0,right:0,top:0,bottom:0,margin:"auto"}}>
                         <TableContainer >
                             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Customer Id</TableCell>
-                                        <TableCell align="right">Customer Name</TableCell>
-                                        <TableCell align="right">Gender&nbsp;</TableCell>
-                                        <TableCell align="right">Customer Address&nbsp;</TableCell>
-                                        <TableCell align="right">E-mail&nbsp;</TableCell>
-                                        <TableCell align="right">ContactNo&nbsp;</TableCell>
+                                        <TableCell align="center">Customer Id</TableCell>
+                                        <TableCell align="center">Customer Name</TableCell>
+                                        <TableCell align="center">Gender</TableCell>
+                                        <TableCell align="center">Customer Address&nbsp;</TableCell>
+                                        <TableCell align="center">E-mail&nbsp;</TableCell>
+                                        <TableCell align="center">ContactNo&nbsp;</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -165,14 +167,14 @@ class Customer extends Component {
                                             key={row.CustomerId}
                                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                         >
-                                            <TableCell component="th" scope="row">
+                                            <TableCell align="center" component="th" scope="row">
                                                 {row.CustomerId}
                                             </TableCell>
-                                            <TableCell align="right">{row.CustomerName}</TableCell>
-                                            <TableCell align="right">{row.Gender}</TableCell>
-                                            <TableCell align="right">{row.CustomerAddress}</TableCell>
-                                            <TableCell align="right">{row.Email}</TableCell>
-                                            <TableCell align="right">{row.ContactNo}</TableCell>
+                                            <TableCell align="center">{row.CustomerName}</TableCell>
+                                            <TableCell align="center">{row.Gender}</TableCell>
+                                            <TableCell align="center">{row.CustomerAddress}</TableCell>
+                                            <TableCell align="center">{row.Email}</TableCell>
+                                            <TableCell align="center">{row.ContactNo}</TableCell>
 
                                         </TableRow>
                                     ))}

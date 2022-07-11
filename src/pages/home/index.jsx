@@ -6,6 +6,7 @@ import food_icon from "../../assets/img/food.png";
 import food_logo from "../../assets/img/food_logo.png";
 import img2 from "../../assets/img/img2.png";
 import * as React from 'react';
+import Customer from "../customer";
 
 
 class HomePage extends Component {
@@ -14,26 +15,19 @@ class HomePage extends Component {
     }
 
 
-    navigation(){
 
-    }
-
-    render() {
+render() {
         const {classes} = this.props
 
-        // onChange={(e) =>{
-        //     this.navigation();
-        // }}
-
-        return(
+    return(
             <Grid style={{overflow:'hidden'}}>
                 <Grid className={classes.navTabs}>
                     <Tabs  centered onChange={onchange}>
-                        <Tab label="Home"  style={{color:'white',top:'7px'}}/>
+                        <Tab label="Home" href ="/" style={{color:'white',top:'7px'}}/>
 
-                        <Tab label="Customer"  style={{color:'white',top:'7px'}}/>
+                        <Tab label="Customer"  href ="Customer" style={{color:'white',top:'7px'}}/>
 
-                        <Tab label="Item" style={{color:'white',top:'7px'}}/>
+                        <Tab label="Item" href ="Item" style={{color:'white',top:'7px'}}/>
                     </Tabs>
                 </Grid>
 
