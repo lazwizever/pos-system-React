@@ -4,6 +4,7 @@ export const styleSheet = {
         height: '8vh',
         width: '100vw',
         color:'yellow',
+        overflow:'hidden'
     },
 
 }

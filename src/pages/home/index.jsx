@@ -21,15 +21,15 @@ class HomePage extends Component {
     render() {
         const {classes} = this.props
 
-        onchange = () => {
-           this.navigation();
-        };
+        // onChange={(e) =>{
+        //     this.navigation();
+        // }}
 
         return(
-            <Grid>
+            <Grid style={{overflow:'hidden'}}>
                 <Grid className={classes.navTabs}>
-                    <Tabs  centered selectionFollowsFocus>
-                        <Tab label="Home" style={{color:'white',top:'7px'}}/>
+                    <Tabs  centered onChange={onchange}>
+                        <Tab label="Home"  style={{color:'white',top:'7px'}}/>
 
                         <Tab label="Customer"  style={{color:'white',top:'7px'}}/>
 
